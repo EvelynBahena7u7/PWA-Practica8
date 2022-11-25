@@ -52,9 +52,13 @@
     <script src="https://evelynbahena7u7.github.io/PWA-Practica8/js/camera.js"></script>
     <script src="https://evelynbahena7u7.github.io/PWA-Practica8/js/app.js"></script>
     <script>
-        if(navigator.serviceWorker){
-           navigator.serviceWorker.register('https://evelynbahena7u7.github.io/PWA-Practica8/sw.js');
-        }
+       if(navigator.serviceWorker){
+    let url = window.location;
+    if(url.toString().includes('localhost:8080')){
+        navigator.serviceWorker.register('/sw.js');
+    }
+    navigator.serviceWorker.register('https://evelynbahena7u7.github.io/PWA-Practica8/sw.js');
+}
     </script>
 </body>
 </html>
